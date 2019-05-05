@@ -1,0 +1,158 @@
+[id='asciidoc-cheat-sheet']
+= Getting started with AsciiDoctor
+
+As a technical writer who wants produce some documentation, you should be familiar with basic AsciiDoc syntax.
+The following guide shows of the few most common examples of AsciiDoc syntax usages.
+
+// For a more in-depth
+[discrete]
+== Basic markup reference
+
+=== Paragraph
+
+You don't need to use special markup to type a paragraph in AsciiDoc.
+You can separate paragraphs by placing an empty line between them.
+
+=== Inline  markup
+
+==== Bold
+* *Constrained*
++
+----
+*Constrained*
+----
+* **Un**constrained
++
+----
+**Un**constrained
+----
+
+==== Italics
+* _Constrained_
++
+----
+_Constrained_
+----
+* __Un__constrained
++
+----
+__Un__constrained
+----
+
+==== Monospace
+* `Constrained`
++
+----
+`Unconstrained`
+----
+* ``Un``constrained
++
+----
+``Un``constrained
+----
++
+Use monospace to mark up literal values, such as:
++
+--
+* file names
+* shell commands
+* names of services
+* variable names and variable values
+--
+
+=== Block markup
+
+==== Code Block
+
+Use code blocks to show longer sections of code or multi-line commands.
+Set the `[source]` attribute and specify the language to enable syntax highlighting:
+
+.Source
+[source,asciidoc]
+--
+[source,python]
+----
+
+import re
+
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt)
+----
+--
+
+.Rendered
+[source,python]
+----
+import re
+
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt)
+----
+
+==== Literal block
+
+Use literal blocks to mark up
+
+.Source
+[source,asciidoc]
+----
+....
+$ systemctl status
+● hostname.foo
+    State: degraded
+     Jobs: 0 queued
+   Failed: 1 units
+    Since: Sun 2019-05-05 20:40:03 CEST; 4h 11min ago
+   CGroup: /
+           ├─user.slice
+           │ └─user-1000.slice
+           │   ├─user@1000.service
+           │   │ ├─gvfs-goa-volume-monitor.service
+           │   │ │ └─2930 /usr/libexec/gvfs-goa-volume-monitor
+           │   │ ├─xdg-permission-store.service
+....
+----
+
+.Rendered
+....
+$ systemctl status
+● hostname.foo
+    State: degraded
+     Jobs: 0 queued
+   Failed: 1 units
+    Since: Sun 2019-05-05 20:40:03 CEST; 4h 11min ago
+   CGroup: /
+           ├─user.slice
+           │ └─user-1000.slice
+           │   ├─user@1000.service
+           │   │ ├─gvfs-goa-volume-monitor.service
+           │   │ │ └─2930 /usr/libexec/gvfs-goa-volume-monitor
+           │   │ ├─xdg-permission-store.service....
+...
+....
+
+////
+what markup?
+
+paragraph
+links
+code blocks
+lists (ordered and unordered, labeled?)
+headings
+inline commands
+open blocks
+admonitions
+labels?
+escaping characters
+links
+tables?
+
+asciidoc vs markdown links
+asciidoctor.org link
+
+asciidoctor compile to html
+
+html build preview
+atom live preview
+firefox preview?
+////
