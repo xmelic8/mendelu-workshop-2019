@@ -1,6 +1,6 @@
 == Procedure module heading
 
-Introductory paragraph for the concept module. It can include inline markup such as *bold*, _italic_, and `code`.
+Introductory paragraph for the procedure module. It can include inline markup such as *bold*, _italic_, and `code`.
 
 === Prerequisites
 
