@@ -1,0 +1,27 @@
+== Reference module heading
+
+Introductory paragraph for the reference module. It can include inline markup such as *bold*, _italic_, and `code`.
+
+The contents of the reference module typically consists of a single itemized list, labeled list, or table. An itemized list looks like this:
+
+* First item.
+* Second item.
+* Third item.
+
+A labeled list looks as follows:
+
+first term:: an explanation of the first term.
+second term:: an explanation of the second term.
+
+We will likely not need to include a table in this workshop, but in case you really want to use it, here is how:
+
+[options="header"]
+|====
+|Column 1 header|Column 2 header|Column 3 header
+|Row 1, column 1|Row 1, column 2|Row 1, column 3
+|Row 2, column 1|Row 2, column 2|Row 2, column 3
+|====
+
+=== Additional resources
+
+* link:http://example.com[Example link]
