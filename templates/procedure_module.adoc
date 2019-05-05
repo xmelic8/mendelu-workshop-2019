@@ -1,0 +1,27 @@
+== Procedure module heading
+
+Introductory paragraph for the concept module. It can include inline markup such as *bold*, _italic_, and `code`.
+
+=== Prerequisites
+
+* First prerequisite.
+* Second prerequisite.
+* Third prerequisite.
+
+=== Procedure
+
+. First step with a single paragraph and nothing else.
+. Second step that consists of two individual paragraphs. This is the first one.
++
+And this is the second one. Note that the paragraphs are connected with a `+` sign on a separate line instead of an empty line to let AsciiDoc know that this paragraph is still part of the second step.
+. Third step that consists of two individual paragraphs with a code block in between them. This is the first paragraph.
++
+----
+code block
+----
++
+This is the second paragraph. Just like with the previous step, this one also uses `+` signs to separate items while making sure they are all part of the third step.
+
+=== Additional resources
+
+* link:http://example.com[Example link]
