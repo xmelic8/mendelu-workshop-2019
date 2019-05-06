@@ -1,1 +1,2 @@
 :toc:
+:source-highlighter: pygments.rb
