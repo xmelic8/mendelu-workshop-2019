@@ -1,0 +1,46 @@
+== Baking a cake
+
+This is test documentation for "baking a cake": Bourbon, black cherry & bacon brownies
+
+=== Information
+* PREP: `5 MINS`
+* DIFFICUTLY: `EASY`
+* CUTS INTO: `CUTS INTO`
+* COOK: `55 MINS`
+
+
+=== Ingredients
+* dried sour cherries *(200g)*
+* bourbon *(100ml)*
+* 1 tsp cinnamon
+* maple syrup *(50ml)*
+* 6 rashers smoked streaky bacon
+your favourite brownie mixture (see Goes well with for our Best-ever brownies recipe)
+a little cocoa powder, for dusting
+
+=== Nutrition
+[options="header"]
+|====
+|kcal|fat|saturates|carbs
+|456|23g|13g|50g
+|====
+
+[options="header"]
+|====
+|sugars|fibre|protein|salt
+|36g|3g|6g|0.5g
+|====
+
+=== Method
+
+Step one:: Heat oven to `180°C/160°C` fan/gas 4. In a small pan, warm (don’t boil) the cherries in the bourbon, then leave to infuse for at least `20 mins`.
+
+Step two:: Meanwhile, mix the cinnamon with the maple syrup and brush both sides of the bacon with it. Lay the rashers on a rack set over a roasting tin covered in foil and roast, basting occasionally with the syrup, for about `20 mins` until they look nicely browned. Take them out and leave to cool completely on the rack while you make the brownie mixture.
+
+Step three:: Follow your chosen recipe to make the brownie mixture and heat oven to the required temperature. Drain the bourbon-soaked cherries and add them to the brownie mixture. Chop the bacon into little pieces (it will crumble very easily) and add to the mixture too, stirring everything together. Bake as per the recipe, then leave to cool completely before dusting with cocoa and slicing into squares.
+
+_Recipe from Good Food magazine, February 2016_
+
+=== Additional resources
+
+* link:https://www.bbcgoodfood.com/recipes/emmas-almost-famous-bourbon-black-cherry-bacon-brownies[Bourbon, black cherry & bacon brownies]
