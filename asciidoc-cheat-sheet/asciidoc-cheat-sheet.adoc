@@ -1,12 +1,12 @@
 include::attributes.adoc[]
+// uncomment for PDF builds
 :toc:
 
 [id='asciidoc-cheat-sheet']
 = Getting started with AsciiDoctor
 
-//=== started writing, styling, building, and previewing content with AsciiDoctor.
+Start writing, styling, building, and previewing content with AsciiDoctor.
 
-// For a more in-depth
 == Basic markup reference
 
 As a technical writer you should be familiar with basic AsciiDoc syntax.
@@ -28,8 +28,12 @@ Your modules should start with a level 0 heading.
 [id='block-id']
 === Block ID
 
-Attach block IDs to your sections to make internal linking easier.
-Block IDs must not contain spaces.
+Add block IDs to your sections to make internal linking easier.
+
+Block IDs:
+
+* must be unique to each section
+* must not contain spaces
 
 [source,asciidoc]
 ----
@@ -91,7 +95,7 @@ Use monospace to mark up literal values, such as:
 * variable names and variable values
 --
 
-You can link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#formatted-text[combine] inline markup to achieve additional styling options.
+You can link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#formatted-text[combine] inline markup to access additional styling options.
 
 === Lists
 
@@ -103,13 +107,13 @@ An unordered list makes long enumerations:
 * readable
 * easy to follow
 
-Ensure that you place an empty line before the first item of an unordered list.
+Always place an empty line before the first item of an unordered list.
 Use up to 5 asterisks to create different level nested sub-items.
 
 [source,asciidoc]
 ----
 This is the list title:
-// empty line
+
 * Item 1
 ** Sub-item 1
 * Item 2
@@ -128,7 +132,7 @@ Use an ordered list to describe a sequence of steps:
 [source,asciidoc]
 ----
 This is the list title:
-// empty line
+
 . First step
 .. Sub-step
 ... Sub-sub-step
@@ -230,7 +234,8 @@ link:https://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoctor Writer's G
 
 ==== Relative
 
-Link to a section in the same document using the xref:block-id[section ID]:
+Link to a section in the same document using the xref:block-id[section ID].
+This also works for xref:including-content-from-other-files[included AsciiDoc content].
 
 [source,asciidoc]
 ----
@@ -282,13 +287,15 @@ $ tar -xzvf myLatestProject.tar.gz
 ./install.sh
 ----
 
-=== Including content from other files
+[id='including-content-from-other-files']
+=== Including content form other files
 
-AsciiDoc allows you to include files in other files, allowing you to compose modules into assemblies and write in a modular way.
+AsciiDoc allows you to include other files in your title,
+Use this functionality to compose modules into assemblies and write documentation in a modular way.
 
-Use the following syntax to include a file.
-Use the `leveloffset` attribute to ensure that the include pieces nest correctly.
-Specify the location of the included file relative to the one you are including it in.
+Use the `include::` directive to include content from an external resource in your title.
+Specify the location of the included module relative to file that you are including it in.
+Use the `leveloffset` attribute to ensure that the included pieces nest correctly.
 For example:
 
 [source,asciidoc]
@@ -304,7 +311,7 @@ For example:
 
 You should have link:https://asciidoctor.org/[AsciiDoctor] installed on your system. You can use it to build your content.
 
-. Ensure that you are in the directory that contains your main ADOC file and execute the following command:.
+. Ensure that you are in the directory that contains your main `.adoc` file and execute the following command:.
 
 [source,bash,subs="quotes"]
 ----
@@ -312,7 +319,6 @@ $ asciidoctor _main_file_name_.adoc
 ----
 
 The main file is titled `master.adoc` by default, although you can choose a different name.
-
 
 == Previewing rendered content
 

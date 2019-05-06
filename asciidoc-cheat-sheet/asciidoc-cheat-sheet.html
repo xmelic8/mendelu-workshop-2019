@@ -446,7 +446,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_block_markup">Block markup</a></li>
 <li><a href="#links">Links</a></li>
 <li><a href="#_complex_content">Complex content</a></li>
-<li><a href="#_including_content_from_other_files">Including content from other files</a></li>
+<li><a href="#including-content-from-other-files">Including content form other files</a></li>
 </ul>
 </li>
 <li><a href="#_building_content">Building content</a></li>
@@ -458,15 +458,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>As a technical writer who wants produce some documentation, you should be familiar with basic AsciiDoc syntax.
-The following guide shows a few most common examples of AsciiDoc markup usages.
-For a more in-depth look at AsciiDoc syntax, check out the <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference">AsciiDoctor syntax quick reference</a>.</p>
+<p>Start writing, styling, building, and previewing content with AsciiDoctor.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_basic_markup_reference">Basic markup reference</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>As a technical writer you should be familiar with basic AsciiDoc syntax.
+The following section shows a few of the most common examples of AsciiDoc markup usage.
+For a more in-depth look at AsciiDoc syntax, check out the <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference">AsciiDoctor syntax quick reference</a>.</p>
+</div>
 <div class="sect2">
 <h3 id="_headings">Headings</h3>
 <div class="paragraph">
@@ -484,13 +487,25 @@ Your modules should start with a level 0 heading.</p>
 <div class="sect2">
 <h3 id="block-id">Block ID</h3>
 <div class="paragraph">
-<p>Attach block IDs to your sections to make internal linking easier.
-Block IDs must not contain spaces.</p>
+<p>Add block IDs to your sections to make internal linking easier.</p>
+</div>
+<div class="paragraph">
+<p>Block IDs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>must be unique to each section</p>
+</li>
+<li>
+<p>must not contain spaces</p>
+</li>
+</ul>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-asciidoc" data-lang="asciidoc">[id='this-is-a-block-id']
-= This is a level 0 heading</code></pre>
+= This is a section heading</code></pre>
 </div>
 </div>
 </div>
@@ -598,7 +613,7 @@ You can separate paragraphs by placing an empty line between them.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>You can <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#formatted-text">combine</a> inline markup to achieve additional styling options.</p>
+<p>You can <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#formatted-text">combine</a> inline markup to access additional styling options.</p>
 </div>
 </div>
 </div>
@@ -623,16 +638,13 @@ You can separate paragraphs by placing an empty line between them.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Ensure that you place an empty line before the first item of an unordered list.
-Use additional asterisks to create different level nested sub-items.</p>
-</div>
-<div class="paragraph">
-<p>+</p>
+<p>Always place an empty line before the first item of an unordered list.
+Use up to 5 asterisks to create different level nested sub-items.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-asciidoc" data-lang="asciidoc">This is the list title:
-// empty line
+
 * Item 1
 ** Sub-item 1
 * Item 2
@@ -664,7 +676,7 @@ Use additional asterisks to create different level nested sub-items.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-asciidoc" data-lang="asciidoc">This is the list title:
-// empty line
+
 . First step
 .. Sub-step
 ... Sub-sub-step
@@ -674,7 +686,7 @@ Use additional asterisks to create different level nested sub-items.</p>
 </div>
 <div class="paragraph">
 <p>Ensure that you place an empty line before the first item of an ordered list.
-Use additional periods to create different level nested list sub-items.</p>
+Use up to 5 periods to create different level nested list sub-items.</p>
 </div>
 <div class="paragraph">
 <p>AsciiDoc also provides markup for other, more <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#lists">specialized list types</a>.</p>
@@ -687,7 +699,7 @@ Use additional periods to create different level nested list sub-items.</p>
 <h4 id="_code_block">Code Block</h4>
 <div class="paragraph">
 <p>Use code blocks to show longer sections of code or multi-line commands.
-Set the <code>[source]</code> attribute and specify the language to enable syntax highlighting:</p>
+Set the <code>[source]</code> attribute and specify the language of the code to enable syntax highlighting:</p>
 </div>
 <div class="listingblock">
 <div class="title">Source</div>
@@ -779,7 +791,8 @@ $ systemctl status
 <div class="sect3">
 <h4 id="_relative">Relative</h4>
 <div class="paragraph">
-<p>Link to a section in the same document using the <a href="#block-id">section ID</a>:</p>
+<p>Link to a section in the same document using the <a href="#block-id">section ID</a>.
+This also works for <a href="#including-content-from-other-files">included AsciiDoc content</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -840,19 +853,20 @@ $ tar -xzvf myLatestProject.tar.gz
 </div>
 </div>
 <div class="sect2">
-<h3 id="_including_content_from_other_files">Including content from other files</h3>
+<h3 id="including-content-from-other-files">Including content form other files</h3>
 <div class="paragraph">
-<p>AsciiDoc allows you to include files in other files, allowing you to compose modules into assemblies and write in a modular way.</p>
+<p>AsciiDoc allows you to include other files in your title,
+Use this functionality to compose modules into assemblies and write documentation in a modular way.</p>
 </div>
 <div class="paragraph">
-<p>Use the following syntax to include a file.
-Use the <code>leveloffset</code> attribute to ensure that the include pieces nest correctly.
-Specify the location of the included file relative to the one you are including it in.
+<p>Use the <code>include::</code> directive to include content from an external resource in your title.
+Specify the location of the included module relative to file that you are including it in.
+Use the <code>leveloffset</code> attribute to ensure that the included pieces nest correctly.
 For example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-asciidoc" data-lang="asciidoc">include::modules/using-the-include-directive.adoc[leveloffset=+1]</code></pre>
+<pre class="highlight"><code class="language-asciidoc" data-lang="asciidoc">include::modules/_included-file-name_.adoc[leveloffset=+1]</code></pre>
 </div>
 </div>
 </div>
@@ -867,7 +881,7 @@ For example:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure that you are in the directory that contains your main ADOC file and execute the following command:.</p>
+<p>Ensure that you are in the directory that contains your main <code>.adoc</code> file and execute the following command:.</p>
 </li>
 </ol>
 </div>
@@ -892,7 +906,7 @@ For example:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-05-06 04:00:34 +0200
+Last updated 2019-05-06 11:25:09 +0200
 </div>
 </div>
 </body>

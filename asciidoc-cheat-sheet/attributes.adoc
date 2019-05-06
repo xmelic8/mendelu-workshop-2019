@@ -1,2 +1,3 @@
 :toc:
-:source-highlighter: pygments.rb
+// rouge syntax highlighter seems to work best for PDF
+:source-highlighter: rouge
