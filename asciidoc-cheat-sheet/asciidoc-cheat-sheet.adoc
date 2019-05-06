@@ -1,11 +1,11 @@
-//inlcude::attributes.adoc[]
+include::attributes.adoc[]
 :toc:
 
 [id='asciidoc-cheat-sheet']
 = Getting started with AsciiDoctor
 
 As a technical writer who wants produce some documentation, you should be familiar with basic AsciiDoc syntax.
-The following guide shows of the few most common examples of AsciiDoc syntax usages.
+The following guide shows a few most common examples of AsciiDoc markup usages.
 For a more in-depth look at AsciiDoc syntax, check out the link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoctor syntax quick reference].
 
 // For a more in-depth
@@ -286,7 +286,7 @@ AsciiDoc allows you to include files in other files, allowing you to compose mod
 
 Use the following syntax to include a file.
 Use the `leveloffset` attribute to ensure that the include pieces nest correctly.
-Specify the location of the included file relative to the one you are included it in.
+Specify the location of the included file relative to the one you are including it in.
 For example:
 
 [source,asciidoc]
@@ -308,8 +308,8 @@ You should have link:https://asciidoctor.org/[AsciiDoctor] installed on your sys
 ----
 $ asciidoctor _main_file_name_.adoc
 ----
-+
-The main file is usually titled `master.adoc`, although you can choose a different name.
+
+The main file is titled `master.adoc` by default, although you can choose a different name.
 
 
 == Previewing rendered content

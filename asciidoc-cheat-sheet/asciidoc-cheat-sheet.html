@@ -447,9 +447,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#links">Links</a></li>
 <li><a href="#_complex_content">Complex content</a></li>
 <li><a href="#_including_content_from_other_files">Including content from other files</a></li>
-<li><a href="#_escaping_characters">Escaping characters</a></li>
 </ul>
 </li>
+<li><a href="#_building_content">Building content</a></li>
+<li><a href="#_previewing_rendered_content">Previewing rendered content</a></li>
 </ul>
 </div>
 </div>
@@ -458,7 +459,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p>As a technical writer who wants produce some documentation, you should be familiar with basic AsciiDoc syntax.
-The following guide shows of the few most common examples of AsciiDoc syntax usages.</p>
+The following guide shows a few most common examples of AsciiDoc markup usages.
+For a more in-depth look at AsciiDoc syntax, check out the <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference">AsciiDoctor syntax quick reference</a>.</p>
 </div>
 </div>
 </div>
@@ -675,7 +677,7 @@ Use additional asterisks to create different level nested sub-items.</p>
 Use additional periods to create different level nested list sub-items.</p>
 </div>
 <div class="paragraph">
-<p>AsciiDoc also provides markup other, more <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#lists">specialized list types</a>.</p>
+<p>AsciiDoc also provides markup for other, more <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#lists">specialized list types</a>.</p>
 </div>
 </div>
 </div>
@@ -845,7 +847,7 @@ $ tar -xzvf myLatestProject.tar.gz
 <div class="paragraph">
 <p>Use the following syntax to include a file.
 Use the <code>leveloffset</code> attribute to ensure that the include pieces nest correctly.
-Specify the location of the included file relative to the one you are included it in.
+Specify the location of the included file relative to the one you are including it in.
 For example:</p>
 </div>
 <div class="listingblock">
@@ -854,27 +856,43 @@ For example:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_escaping_characters">Escaping characters</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_content">Building content</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>You can escape special special characters in code examples by wrapping the in double plus symbols:</p>
+<p>You should have <a href="https://asciidoctor.org/">AsciiDoctor</a> installed on your system. You can use it to build your content.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure that you are in the directory that contains your main ADOC file and execute the following command:.</p>
+</li>
+</ol>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash"># comments
-#</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ asciidoctor <em>main_file_name</em>.adoc</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Escaping using a backslash (<code>\</code>) is also possible, but does not work reliably and is not recommended.</p>
+<p>The main file is titled <code>master.adoc</code> by default, although you can choose a different name.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_previewing_rendered_content">Previewing rendered content</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To view the built content, open the <code><em>main_file_name</em>.html</code> file in a browser.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-05-06 03:21:40 +0200
+Last updated 2019-05-06 04:00:34 +0200
 </div>
 </div>
 </body>
