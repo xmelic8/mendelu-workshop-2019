@@ -1,6 +1,6 @@
 include::attributes.adoc[]
 // uncomment for PDF builds
-:toc:
+//:toc!:
 
 [id='asciidoc-cheat-sheet']
 = Getting started with AsciiDoctor
