@@ -4,12 +4,14 @@ include::attributes.adoc[]
 [id='asciidoc-cheat-sheet']
 = Getting started with AsciiDoctor
 
-As a technical writer who wants produce some documentation, you should be familiar with basic AsciiDoc syntax.
-The following guide shows a few most common examples of AsciiDoc markup usages.
-For a more in-depth look at AsciiDoc syntax, check out the link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoctor syntax quick reference].
+//=== started writing, styling, building, and previewing content with AsciiDoctor.
 
 // For a more in-depth
 == Basic markup reference
+
+As a technical writer you should be familiar with basic AsciiDoc syntax.
+The following section shows a few of the most common examples of AsciiDoc markup usage.
+For a more in-depth look at AsciiDoc syntax, check out the link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoctor syntax quick reference].
 
 === Headings
 
@@ -32,7 +34,7 @@ Block IDs must not contain spaces.
 [source,asciidoc]
 ----
 [id='this-is-a-block-id']
-= This is a level 0 heading
+= This is a section heading
 ----
 
 === Paragraph
@@ -102,8 +104,8 @@ An unordered list makes long enumerations:
 * easy to follow
 
 Ensure that you place an empty line before the first item of an unordered list.
-Use additional asterisks to create different level nested sub-items.
-+
+Use up to 5 asterisks to create different level nested sub-items.
+
 [source,asciidoc]
 ----
 This is the list title:
@@ -135,7 +137,7 @@ This is the list title:
 ----
 
 Ensure that you place an empty line before the first item of an ordered list.
-Use additional periods to create different level nested list sub-items.
+Use up to 5 periods to create different level nested list sub-items.
 
 AsciiDoc also provides markup for other, more link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#lists[specialized list types].
 
@@ -144,7 +146,7 @@ AsciiDoc also provides markup for other, more link:https://asciidoctor.org/docs/
 ==== Code Block
 
 Use code blocks to show longer sections of code or multi-line commands.
-Set the `[source]` attribute and specify the language to enable syntax highlighting:
+Set the `[source]` attribute and specify the language of the code to enable syntax highlighting:
 
 .Source
 [source,asciidoc]
@@ -291,7 +293,7 @@ For example:
 
 [source,asciidoc]
 ----
-\include::modules/using-the-include-directive.adoc[leveloffset=+1]
+\include::modules/_included-file-name_.adoc[leveloffset=+1]
 ----
 
 //=== Escaping characters
