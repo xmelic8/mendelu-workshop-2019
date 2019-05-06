@@ -1,17 +1,46 @@
+//inlcude::attributes.adoc[]
+:toc:
+
 [id='asciidoc-cheat-sheet']
 = Getting started with AsciiDoctor
 
 As a technical writer who wants produce some documentation, you should be familiar with basic AsciiDoc syntax.
 The following guide shows of the few most common examples of AsciiDoc syntax usages.
+For a more in-depth look at AsciiDoc syntax, check out the link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoctor syntax quick reference].
 
 // For a more in-depth
-[discrete]
 == Basic markup reference
+
+=== Headings
+
+Create headings by stacking `=` symbols at the beginning of a line.
+There 5 heading levels, numbered 0 to 4.
+Your modules should start with a level 0 heading.
+
+[source,asciidoc]
+----
+= This is a level 0 heading
+===== This is a level 4 heading
+----
+
+[id='block-id']
+=== Block ID
+
+Attach block IDs to your sections to make internal linking easier.
+Block IDs must not contain spaces.
+
+[source,asciidoc]
+----
+[id='this-is-a-block-id']
+= This is a level 0 heading
+----
 
 === Paragraph
 
 You don't need to use special markup to type a paragraph in AsciiDoc.
 You can separate paragraphs by placing an empty line between them.
+
+Like this!
 
 === Inline  markup
 
@@ -60,6 +89,56 @@ Use monospace to mark up literal values, such as:
 * variable names and variable values
 --
 
+You can link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#formatted-text[combine] inline markup to achieve additional styling options.
+
+=== Lists
+
+==== Unordered
+
+An unordered list makes long enumerations:
+
+* clear
+* readable
+* easy to follow
+
+Ensure that you place an empty line before the first item of an unordered list.
+Use additional asterisks to create different level nested sub-items.
++
+[source,asciidoc]
+----
+This is the list title:
+// empty line
+* Item 1
+** Sub-item 1
+* Item 2
+* Item 3
+----
+
+==== Ordered
+
+Use an ordered list to describe a sequence of steps:
+
+. Learn AsciiDoc
+. Write some documentation
+. Publish your documentation
+. Be awesome
+
+[source,asciidoc]
+----
+This is the list title:
+// empty line
+. First step
+.. Sub-step
+... Sub-sub-step
+. Second step
+. Third step
+----
+
+Ensure that you place an empty line before the first item of an ordered list.
+Use additional periods to create different level nested list sub-items.
+
+AsciiDoc also provides markup for other, more link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#lists[specialized list types].
+
 === Block markup
 
 ==== Code Block
@@ -70,28 +149,29 @@ Set the `[source]` attribute and specify the language to enable syntax highlight
 .Source
 [source,asciidoc]
 --
-[source,python]
+[source,bash]
 ----
-
-import re
-
-txt = "The rain in Spain"
-x = re.search("^The.*Spain$", txt)
+#!/bin/bash
+file='book.txt'
+while read line; do
+echo $line
+done < $file
 ----
 --
 
 .Rendered
-[source,python]
+[source,bash]
 ----
-import re
-
-txt = "The rain in Spain"
-x = re.search("^The.*Spain$", txt)
+#!/bin/bash
+file='book.txt'
+while read line; do
+echo $line
+done < $file
 ----
 
 ==== Literal block
 
-Use literal blocks to mark up
+Use literal blocks to show terminal output examples or the listed contents of a file:
 
 .Source
 [source,asciidoc]
@@ -131,28 +211,108 @@ $ systemctl status
 ...
 ....
 
-////
-what markup?
+[id='links']
+=== Links
 
-paragraph
-links
-code blocks
-lists (ordered and unordered, labeled?)
-headings
-inline commands
-open blocks
-admonitions
-labels?
-escaping characters
-links
-tables?
+==== External
 
-asciidoc vs markdown links
-asciidoctor.org link
+Create a link to an external resource:
 
-asciidoctor compile to html
+[source,asciidoc]
+----
+link:https://www.example.com[link text]
+----
 
-html build preview
-atom live preview
-firefox preview?
-////
+The following link, for example, takes you to the
+link:https://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoctor Writer's Guide]
+
+==== Relative
+
+Link to a section in the same document using the xref:block-id[section ID]:
+
+[source,asciidoc]
+----
+xref:section-id[link text]
+----
+
+//=== Admonitions
+
+//=== Escaping formatting characters
+
+=== Complex content
+
+Use the `+` character to group content of different types together.
+This ensures that combined content is correctly indented, and preserves the numbering of the steps.
+The following example features a list with codes examples in two of its steps:
+
+.Source
+[source,asciidoc]
+--
+. Download `myLatestProject.tar.gz`
+. Extract the project files:
++
+[source,bash]
+----
+$ tar -xzvf myLatestProject.tar.gz
+----
++
+. Install the files:
++
+[source,bash]
+----
+./install.sh
+----
+--
+
+.Rendered
+. Download `myLatestProject.tar.gz`
+. Extract the project files:
++
+[source,bash]
+----
+$ tar -xzvf myLatestProject.tar.gz
+----
++
+. Install the files:
++
+[source,bash]
+----
+./install.sh
+----
+
+=== Including content from other files
+
+AsciiDoc allows you to include files in other files, allowing you to compose modules into assemblies and write in a modular way.
+
+Use the following syntax to include a file.
+Use the `leveloffset` attribute to ensure that the include pieces nest correctly.
+Specify the location of the included file relative to the one you are included it in.
+For example:
+
+[source,asciidoc]
+----
+\include::modules/using-the-include-directive.adoc[leveloffset=+1]
+----
+
+//=== Escaping characters
+
+//You can escape special special characters in code examples by wrapping the in double plus (`++`) symbols.
+
+== Building content
+
+You should have link:https://asciidoctor.org/[AsciiDoctor] installed on your system. You can use it to build your content.
+
+. Ensure that you are in the directory that contains your main ADOC file and execute the following command:.
+
+[source,bash,subs="quotes"]
+----
+$ asciidoctor _main_file_name_.adoc
+----
++
+The main file is usually titled `master.adoc`, although you can choose a different name.
+
+== Previewing rendered content
+
+To view the built content, open the `_main_file_name_.html` file in a browser.
+
+//positional shell:  use `#` to denote root, and `$` to denote non-root user
